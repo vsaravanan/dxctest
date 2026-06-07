@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres:latest
+    container_name: bookstore-db
+    environment:
+      POSTGRES_DB: bookstoredb
+      POSTGRES_USER: bookstore
+      POSTGRES_PASSWORD: bookstore123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/18/docker
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bookstore -d bookstoredb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  bookstore-api:
+    build: .
+    container_name: bookstore-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: bookstoredb
+      DB_USER: bookstore
+      DB_PASS: bookstore123
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

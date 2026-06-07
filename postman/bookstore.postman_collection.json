@@ -1,0 +1,1183 @@
+{
+  "info": {
+    "_postman_id": "4fdac811-1b00-4102-aeca-668a50bf543c",
+    "name": "bookstore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "691160"
+  },
+  "item": [
+    {
+      "name": "/api/v1/books",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 15:38:26 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"isbn\": \"978-0-13-468599-1\",\n        \"title\": \"Effective Java\",\n        \"year\": 2018,\n        \"price\": 45.99,\n        \"genre\": \"Programming\",\n        \"authors\": [\n            {\n                \"name\": \"Joshua Bloch\",\n                \"birthday\": \"1961-08-28\"\n            }\n        ]\n    },\n    {\n        \"isbn\": \"978-0-20-135394-2\",\n        \"title\": \"Design Patterns\",\n        \"year\": 1994,\n        \"price\": 54.99,\n        \"genre\": \"Software Engineering\",\n        \"authors\": [\n            {\n                \"name\": \"Erich Gamma\",\n                \"birthday\": \"1961-03-13\"\n            },\n            {\n                \"name\": \"Richard Helm\",\n                \"birthday\": \"1960-01-01\"\n            },\n            {\n                \"name\": \"Ralph Johnson\",\n                \"birthday\": \"1955-01-01\"\n            },\n            {\n                \"name\": \"John Vlissides\",\n                \"birthday\": \"1961-08-02\"\n            }\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books  for normal user",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books/978-0-13-468599-1",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books",
+            "978-0-13-468599-1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books  for normal user",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books/978-0-13-468599-1",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "978-0-13-468599-1"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "159"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 16:17:47 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"You do not have permission to perform this action\",\n    \"timestamp\": \"2026-06-07T16:17:47.084561718\",\n    \"fieldErrors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books  for admin user",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "admin123",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "admin",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books/978-0-13-468599-1",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books",
+            "978-0-13-468599-1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 15:38:26 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"isbn\": \"978-0-13-468599-1\",\n        \"title\": \"Effective Java\",\n        \"year\": 2018,\n        \"price\": 45.99,\n        \"genre\": \"Programming\",\n        \"authors\": [\n            {\n                \"name\": \"Joshua Bloch\",\n                \"birthday\": \"1961-08-28\"\n            }\n        ]\n    },\n    {\n        \"isbn\": \"978-0-20-135394-2\",\n        \"title\": \"Design Patterns\",\n        \"year\": 1994,\n        \"price\": 54.99,\n        \"genre\": \"Software Engineering\",\n        \"authors\": [\n            {\n                \"name\": \"Erich Gamma\",\n                \"birthday\": \"1961-03-13\"\n            },\n            {\n                \"name\": \"Richard Helm\",\n                \"birthday\": \"1960-01-01\"\n            },\n            {\n                \"name\": \"Ralph Johnson\",\n                \"birthday\": \"1955-01-01\"\n            },\n            {\n                \"name\": \"John Vlissides\",\n                \"birthday\": \"1961-08-02\"\n            }\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books  unknown isbn",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "admin123",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "admin",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books/999-FAKE",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books",
+            "999-FAKE"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books  unknown isbn",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books/999-FAKE",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "999-FAKE"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "144"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 16:27:56 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"Book not found with ISBN: 999-FAKE\",\n    \"timestamp\": \"2026-06-07T16:27:56.390269143\",\n    \"fieldErrors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books?title=Effective Java",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books?title=Effective Java",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Effective Java"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 15:38:26 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"isbn\": \"978-0-13-468599-1\",\n        \"title\": \"Effective Java\",\n        \"year\": 2018,\n        \"price\": 45.99,\n        \"genre\": \"Programming\",\n        \"authors\": [\n            {\n                \"name\": \"Joshua Bloch\",\n                \"birthday\": \"1961-08-28\"\n            }\n        ]\n    },\n    {\n        \"isbn\": \"978-0-20-135394-2\",\n        \"title\": \"Design Patterns\",\n        \"year\": 1994,\n        \"price\": 54.99,\n        \"genre\": \"Software Engineering\",\n        \"authors\": [\n            {\n                \"name\": \"Erich Gamma\",\n                \"birthday\": \"1961-03-13\"\n            },\n            {\n                \"name\": \"Richard Helm\",\n                \"birthday\": \"1960-01-01\"\n            },\n            {\n                \"name\": \"Ralph Johnson\",\n                \"birthday\": \"1955-01-01\"\n            },\n            {\n                \"name\": \"John Vlissides\",\n                \"birthday\": \"1961-08-02\"\n            }\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books?authorName=Joshua Bloch",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books?authorName=Joshua Bloch",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ],
+          "query": [
+            {
+              "key": "authorName",
+              "value": "Joshua Bloch"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 15:38:26 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"isbn\": \"978-0-13-468599-1\",\n        \"title\": \"Effective Java\",\n        \"year\": 2018,\n        \"price\": 45.99,\n        \"genre\": \"Programming\",\n        \"authors\": [\n            {\n                \"name\": \"Joshua Bloch\",\n                \"birthday\": \"1961-08-28\"\n            }\n        ]\n    },\n    {\n        \"isbn\": \"978-0-20-135394-2\",\n        \"title\": \"Design Patterns\",\n        \"year\": 1994,\n        \"price\": 54.99,\n        \"genre\": \"Software Engineering\",\n        \"authors\": [\n            {\n                \"name\": \"Erich Gamma\",\n                \"birthday\": \"1961-03-13\"\n            },\n            {\n                \"name\": \"Richard Helm\",\n                \"birthday\": \"1960-01-01\"\n            },\n            {\n                \"name\": \"Ralph Johnson\",\n                \"birthday\": \"1955-01-01\"\n            },\n            {\n                \"name\": \"John Vlissides\",\n                \"birthday\": \"1961-08-02\"\n            }\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books?title=Effective Java&authorName=Joshua Bloch",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books?title=Effective Java&authorName=Joshua Bloch",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ],
+          "query": [
+            {
+              "key": "title",
+              "value": "Effective Java"
+            },
+            {
+              "key": "authorName",
+              "value": "Joshua Bloch",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 15:38:26 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"isbn\": \"978-0-13-468599-1\",\n        \"title\": \"Effective Java\",\n        \"year\": 2018,\n        \"price\": 45.99,\n        \"genre\": \"Programming\",\n        \"authors\": [\n            {\n                \"name\": \"Joshua Bloch\",\n                \"birthday\": \"1961-08-28\"\n            }\n        ]\n    },\n    {\n        \"isbn\": \"978-0-20-135394-2\",\n        \"title\": \"Design Patterns\",\n        \"year\": 1994,\n        \"price\": 54.99,\n        \"genre\": \"Software Engineering\",\n        \"authors\": [\n            {\n                \"name\": \"Erich Gamma\",\n                \"birthday\": \"1961-03-13\"\n            },\n            {\n                \"name\": \"Richard Helm\",\n                \"birthday\": \"1960-01-01\"\n            },\n            {\n                \"name\": \"Ralph Johnson\",\n                \"birthday\": \"1955-01-01\"\n            },\n            {\n                \"name\": \"John Vlissides\",\n                \"birthday\": \"1961-08-02\"\n            }\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isbn\": \"978-0-13-468599-1\",\r\n    \"title\": \"Effective Java\",\r\n    \"year\": 2018,\r\n    \"price\": 45.99,\r\n    \"genre\": \"Programming\",\r\n    \"authors\": [\r\n        {\r\n            \"name\": \"Joshua Bloch\",\r\n            \"birthday\": \"1961-08-28\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isbn\": \"978-0-13-468599-1\",\r\n    \"title\": \"Effective Java\",\r\n    \"year\": 2018,\r\n    \"price\": 45.99,\r\n    \"genre\": \"Programming\",\r\n    \"authors\": [\r\n        {\r\n            \"name\": \"Joshua Bloch\",\r\n            \"birthday\": \"1961-08-28\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "160"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 15:45:06 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 409,\n    \"error\": \"Conflict\",\n    \"message\": \"A book with ISBN '978-0-13-468599-1' already exists\",\n    \"timestamp\": \"2026-06-07T15:45:06.855704034\",\n    \"fieldErrors\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books missing field",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isbn\": \"978-0-13-468599-2\",\r\n    \"title\": \"Effective Java\",\r\n    \"year\": 2018,\r\n    \"genre\": \"Programming\",\r\n    \"authors\": [\r\n        {\r\n            \"name\": \"Joshua Bloch\",\r\n            \"birthday\": \"1961-08-28\"\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books missing field",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isbn\": \"978-0-13-468599-2\",\r\n    \"title\": \"Effective Java\",\r\n    \"year\": 2018,\r\n    \"genre\": \"Programming\",\r\n    \"authors\": [\r\n        {\r\n            \"name\": \"Joshua Bloch\",\r\n            \"birthday\": \"1961-08-28\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "173"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 16:01:20 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": 400,\n    \"error\": \"Validation Failed\",\n    \"message\": \"One or more fields are invalid\",\n    \"timestamp\": \"2026-06-07T16:01:20.031696369\",\n    \"fieldErrors\": {\n        \"price\": \"Price is required\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "/api/v1/books/978-0-13-468599-1",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "user",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"isbn\": \"978-0-13-468599-1\",\r\n    \"title\": \"Effective Java (3rd Edition)\",\r\n    \"year\": 2018,\r\n    \"price\": 49.99,\r\n    \"genre\": \"Programming\",\r\n    \"authors\": [\r\n      { \"name\": \"Joshua Bloch\", \"birthday\": \"1961-08-28\" }\r\n    ]\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{http}}://{{server}}:{{port}}/api/v1/books/978-0-13-468599-1",
+          "protocol": "{{http}}",
+          "host": [
+            "{{server}}"
+          ],
+          "port": "{{port}}",
+          "path": [
+            "api",
+            "v1",
+            "books",
+            "978-0-13-468599-1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/api/v1/books/978-0-13-468599-1",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"isbn\": \"978-0-13-468599-1\",\r\n    \"title\": \"Effective Java (3rd Edition)\",\r\n    \"year\": 2018,\r\n    \"price\": 49.99,\r\n    \"genre\": \"Programming\",\r\n    \"authors\": [\r\n      { \"name\": \"Joshua Bloch\", \"birthday\": \"1961-08-28\" }\r\n    ]\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{http}}://{{server}}:{{port}}/api/v1/books/978-0-13-468599-1",
+              "protocol": "{{http}}",
+              "host": [
+                "{{server}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "api",
+                "v1",
+                "books",
+                "978-0-13-468599-1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 07 Jun 2026 15:47:30 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"isbn\": \"978-0-13-468599-1\",\n    \"title\": \"Effective Java (3rd Edition)\",\n    \"year\": 2018,\n    \"price\": 49.99,\n    \"genre\": \"Programming\",\n    \"authors\": [\n        {\n            \"name\": \"Joshua Bloch\",\n            \"birthday\": \"1961-08-28\"\n        }\n    ]\n}"
+        }
+      ]
+    }
+  ]
+}
