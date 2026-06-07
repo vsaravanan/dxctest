@@ -25,7 +25,7 @@ public class Book {
     private String title;
 
     @NotNull(message = "Year is required")
-    @Column(nullable = false)
+    @Column(name = "\"year\"", nullable = false)
     private Integer year;
 
     @NotNull(message = "Price is required")

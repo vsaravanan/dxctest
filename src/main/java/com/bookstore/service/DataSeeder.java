@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @Component
-@Profile("dev")
+@Profile({"dev","test"})
 @RequiredArgsConstructor
 @Slf4j
 public class DataSeeder implements CommandLineRunner {
