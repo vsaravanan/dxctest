@@ -33,7 +33,7 @@ node {
                     JAVA_HOME="/usr/lib/jvm/jdk" mvn clean package install -T 1C -DskipTests  
                     java -version
                 '''
-            mvnbuild()
+
 
         }
 
