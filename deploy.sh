@@ -1,6 +1,8 @@
 
-# git pull
-mvn clean package install -Dmaven.test.skip=true -T 1C
+git pull
+
+# -Dmaven.test.skip=true
+mvn clean package install  -T 1C
 exit
 #pm2 restart dxctest
 #sleep 10
