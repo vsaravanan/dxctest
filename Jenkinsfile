@@ -8,6 +8,8 @@ node {
 
     environment {
         colordust = credentials('colordust')
+        JAVA_HOME = "/usr/lib/jvm/jdk"
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
 
     try {
@@ -17,6 +19,7 @@ node {
 
         stage('Environment') {
             envi()
+
             echo "test page 1 : https://saravanjs.com:4001/statichtmls "
             echo "test page 2 : https://saravanjs.com:8001/ "
         }
@@ -26,6 +29,9 @@ node {
         }
 
         stage('Build') {
+            sh '''
+                    java -version
+                '''
             mvnbuild()
         }
 
