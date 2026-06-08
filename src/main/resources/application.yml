@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 10800
 
 spring:
   application:
@@ -8,7 +8,7 @@ spring:
 
 
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:bookstoredb}
+    url: jdbc:postgresql://${DB_HOST:saravanjs}:${DB_PORT:5433}/${DB_NAME:bookstoredb}
     username: ${DB_USER:bookstore}
     password: ${DB_PASS:bookstore123}
     driver-class-name: org.postgresql.Driver

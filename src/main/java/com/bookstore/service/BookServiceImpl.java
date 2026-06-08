@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -38,13 +40,13 @@ public class BookServiceImpl implements BookService {
         existing.setPrice(request.getPrice());
         existing.setGenre(request.getGenre());
 
-        List<Author> updatedAuthors = request.getAuthors().stream()
+        Set<Author> updatedAuthors = request.getAuthors().stream()
                 .map(dto -> Author.builder()
                         .name(dto.getName())
                         .birthday(dto.getBirthday())
                         .book(existing)
                         .build())
-                .toList();
+                .collect(Collectors.toSet());;
         existing.setAuthors(updatedAuthors);
 
         return BookResponse.from(bookRepository.save(existing));
@@ -85,13 +87,13 @@ public class BookServiceImpl implements BookService {
                 .genre(request.getGenre())
                 .build();
 
-        List<Author> authors = request.getAuthors().stream()
+        Set<Author> authors = request.getAuthors().stream()
                 .map(dto -> Author.builder()
                         .name(dto.getName())
                         .birthday(dto.getBirthday())
                         .book(book)
                         .build())
-                .toList();
+                .collect(Collectors.toSet());
         book.getAuthors().addAll(authors);
 
         return book;

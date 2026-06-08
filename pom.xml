@@ -14,8 +14,8 @@
     <groupId>com.bookstore</groupId>
     <artifactId>bookstore-api</artifactId>
     <version>1.0.0</version>
-    <name>bookstore-api</name>
-    <description>Bookstore RESTful API with Spring Boot 4</description>
+    <name>dxctest</name>
+    <description>Bookstore RESTful API with Spring Boot 4 From DXC </description>
 
     <properties>
         <java.version>26</java.version>
@@ -97,6 +97,7 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
