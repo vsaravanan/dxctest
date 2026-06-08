@@ -35,7 +35,7 @@ springdoc:
     operations-sorter: method
     tags-sorter: alpha
 
-dirLog: /opt/logs/bookstore
+dirLog: /data/logs/dxctest
 
 logging:
   file.clean-history-on-start: true
@@ -47,12 +47,12 @@ logging:
     console: "%M - %msg%n"
     file: "%msg%n"
   path: ${dirLog}
-  file.name: ${dirLog}/bookstore.log
+  file.name: ${dirLog}/dxctest.log
 
   file.max-size: 100MB
   file.max-history: 15
 
-  pattern.rolling-file-name: ${dirLog}/%d{yyyyMMdd}/bookstore.%d{yyyyMMdd}.%i.log.gz
+  pattern.rolling-file-name: ${dirLog}/%d{yyyyMMdd}/dxctest.%d{yyyyMMdd}.%i.log.gz
 #  pattern.console: "%d{yyyy-MM-dd HH:mm:ss} | [%thread] | %-5level | %logger{36}.%M - %msg%n"
 #  pattern.file: "%d{yyyy-MM-dd HH:mm:ss} | [%thread] | %-5level | %logger{36}.%M - %msg%n"
 
