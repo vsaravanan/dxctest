@@ -15,7 +15,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update          # use 'validate' in production; 'update' for POC
+      ddl-auto: create-drop          # use 'validate' in production; 'update' for POC
     show-sql: true
     properties:
       hibernate:
