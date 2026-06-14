@@ -46,12 +46,16 @@ node {
             {
                 def scannerHome = tool 'sonar-scanner';
                 withSonarQubeEnv() {
-                    def sonarServerReachable = sh(script: 'curl -s -o /dev/null -w "%{http_code}" http://sjsdb:9000', returnStatus: true) == 200
-                    if (sonarServerReachable) {
+                    def httpCode = sh(
+                            script: 'curl -s -o /dev/null -w "%{http_code}" http://sjsdb:9000',
+                            returnStdout: true
+                    ).trim()
+
+                    if (httpCode == '200') {
                         echo "SonarQube server is running."
                         sh "${scannerHome}/bin/sonar-scanner"
                     } else {
-                        echo 'SonarQube server is down. Continuing without analysis.'
+                        echo "SonarQube server returned HTTP ${httpCode}. Continuing without analysis."
                     }
                 }
             } catch (Exception e) {
