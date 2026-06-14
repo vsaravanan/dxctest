@@ -51,6 +51,8 @@ node {
                             returnStdout: true
                     ).trim()
 
+                    echo "SonarQube HTTP Status: ${httpCode}"
+
                     if (httpCode == '200') {
                         echo "SonarQube server is running."
                         sh "${scannerHome}/bin/sonar-scanner"
